@@ -8,4 +8,6 @@ biscuit run {biscuit}
         This Example will print "hello world" to the console
     - ### [Text2Text](./basic/text2text/)
         This Example will ask for a text and will print it
+    - ### [Colorful](./basic/colorful/)
+        This Example will print a blue text
 - ## Advanced
