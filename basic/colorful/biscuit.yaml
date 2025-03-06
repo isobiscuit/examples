@@ -1,0 +1,3 @@
+entrypoint: code/main.basm
+name: colorful
+version: 0.1.0
