@@ -1,0 +1,29 @@
+
+
+
+
+main:
+    load eax 4
+    load ebx 1
+    load ecx text
+    int 0x45
+
+    load eax 0
+    load ebx 0
+    int 0x45
+
+
+
+text:
+    0x'48,65,6C,6C,6F,20,57,6F,72,6C,64,21' ;; You have to write everything in an ascii hex string.
+                                            ;; You can use text2hex tools (https://www.rapidtables.com/convert/number/ascii-to-hex.html)
+                                            ;; Tipp: Set the seperator to ','
+
+ ;; We have to define all numbers, but you can use an official library calls 'int'
+ ;; Install it with: bfetcher {biscuit_name} int
+0:
+    0x0
+1:
+    0x1
+4:
+    0x4

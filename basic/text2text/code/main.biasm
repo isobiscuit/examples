@@ -1,0 +1,45 @@
+
+
+
+welcome:
+    load eax 4
+    load ebx 1
+    load ecx welcome_message
+    int 0x45
+
+
+loop:
+    load eax 3 ;; Biscuit call 3: Input from console
+    load ebx input_message ;; EBX is the text which will be showed by input, like python: input("> ")
+    int 0x45 ;; Biscuit Call
+
+    load ax quit_char ;; We want 'q' for quit the program
+    cmp eax ax ;; Check if the input message is the 'q'
+    je exit ;; Jump to exit if the user wants to exit (Input == 'q')
+
+    mov eax ecx ;; Do not forget this, because eax will be overwritten in the next instruction
+    load eax 4 ;; Load the write biscuit call
+    load ebx 1 ;; Write to console
+    
+    int 0x45 ;; Biscuit Call
+    jmp loop
+exit:
+    load eax 0
+    load ebx 0
+    int 0x45
+
+welcome_message:
+    0x'57,65,6C,63,6F,6D,65,20,74,6F,20,74,65,78,74,32,74,65,78,74,0A,50,72,65,73,73,20,71,20,74,6F,20,71,75,69,74,2E'
+input_message:
+    0x'3E'
+quit_char:
+    0x'71'
+
+0:
+    0x0
+1:
+    0x1
+3:
+    0x3
+4:
+    0x4
