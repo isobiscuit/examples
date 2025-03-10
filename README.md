@@ -11,3 +11,5 @@ biscuit run {biscuit}
     - ### [Colorful](./basic/colorful/)
         This Example will print a blue text
 - ## Advanced
+    - ### [Filesystem](./advanced/filesystem/)
+        This is an example for the biscuit filesystem

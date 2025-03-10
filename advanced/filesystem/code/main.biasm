@@ -1,0 +1,22 @@
+; Main.biasm
+
+load eax BISC_READ_FILE
+load ebx HELLO_WORLD_FILENAME
+int 0x45
+
+mov ecx eax
+load eax BISC_WRITE
+load ebx BISC_CONSOLE
+int 0x45
+
+
+
+
+HELLO_WORLD_FILENAME:
+    0x'66,69,6C,65,73,79,73,74,65,6D,2F,66,73,2F,68,65,6C,6C,6F,5F,77,6F,72,6C,64,2E,74,78,74' ;; filesystem/fs/hello_world.txt (biscuit_name)/fs/file.txt
+BISC_READ_FILE:
+    0x07
+BISC_WRITE:
+    0x4
+BISC_CONSOLE:
+    0x1
